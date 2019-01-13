@@ -18,6 +18,10 @@ form actionの値
 input nameの値
 <img width="1070" alt="2019-01-13 15 34 45" src="https://user-images.githubusercontent.com/28776859/51082365-e941d280-1748-11e9-914e-5c6fd9f98887.png">
 
+## googleフォームはスプレッドシートに記録が貯まるようにしてください。
+次のボタンをクリックするとスプレッドシートが作成できます。
+<img width="881" alt="2019-01-13 16 17 48" src="https://user-images.githubusercontent.com/28776859/51083637-d76c2980-1760-11e9-9fc9-d4ac391f4223.png">
+回答タブの中にあります。
 
 ## 以下の箇所を取得したデータに書き換えてください。
 ```html
@@ -32,4 +36,14 @@ data: { "entry.xxxxxx" : field1 },
 ``` 
 上記「entry.xxxxxx」をnameの値に書き換え
 
+## 書き換えたhtmlをブラウザで開きボタンを押すだけ
+<img width="400" alt="2019-01-13 18 03 42" src="https://user-images.githubusercontent.com/28776859/51083599-5d3ba500-1760-11e9-8289-fee6b942fed9.png">
 
+上記のようになっていますので、ボタンを押してください。  
+
+<img width="655" alt="2019-01-13 18 03 59" src="https://user-images.githubusercontent.com/28776859/51083600-5d3ba500-1760-11e9-854d-6e61f59708b7.png">
+このように記録されます。  
+
+## ボタンの名前を変えたり、ボタン個数は増やせる
+ボタンの名前を書き換えると記録のコメントに反映されます。  
+いろいろと改造して活用してください。
