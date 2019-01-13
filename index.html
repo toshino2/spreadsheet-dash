@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>spreadsheet ダッシュボタン</title>
+    <!-- jQueryの読み込み -->
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous"></script>
+
 <style>
 /* http://meyerweb.com/eric/tools/css/reset/ 
 v2.0 | 20110126
@@ -106,6 +112,19 @@ h1{
     justify-content: center;
 }
 
+.buruburu {
+    /* animation: hurueru .1s 6; */
+    -webkit-animation: hurueru .1s 6;
+}
+
+@keyframes hurueru {
+    0% {transform: translate(0px, 0px) rotateZ(0deg)}
+    25% {transform: translate(2px, 2px) rotateZ(1deg)}
+    50% {transform: translate(0px, 2px) rotateZ(0deg)}
+    75% {transform: translate(2px, 0px) rotateZ(-1deg)}
+    100% {transform: translate(0px, 0px) rotateZ(0deg)}
+}
+
 @media screen and (max-width:480px) { 
     h1{
         font-size: 20px;
@@ -114,44 +133,78 @@ h1{
 
 </style>
 <script>
+    function postToGoogle(buttonThis) {
+    //googleフォーム actionの値を入力してください
+    var formAction = "https://docs.google.com/forms/d/e/[key]/formResponse";
 
+    //入力内容を取得
+    var field1 = buttonThis.firstElementChild.innerText;
+    console.log(field1);
+
+    buttonThis.classList.add("buruburu");
+    
+    //urlやentryは書き換えてね。
+    $.ajax({
+    url: formAction,
+
+    //googleフォーム nameの値を入力してください
+    data: { "entry.xxxxxx" : field1 },
+                type: "POST",
+                dataType: "xml",
+                statusCode: {
+                    0: function() {
+                        //Success message
+                    },
+                    200: function() {
+                        //Success Message
+                    }
+                }
+            });
+        }
+
+    $(function(){
+        $(".dash-btn").on('webkitAnimationEnd', function(){
+            //.buruburu アニメーション終了時の処理
+            $(this).removeClass("buruburu");
+        });
+});
 </script>
 </head>
 <body>
     <h1>spreadsheet ダッシュボタン</h1>
     <div id="button-area">
-        <div class="dash-btn">
-            <p><!-- ボタンの名前を記入 -->
+        <div class="dash-btn" onClick="postToGoogle(this)">
+            <p class="text"><!-- ボタンの名前を記入 -->
                 おやつボタン
             </p>
             <button>カウントする</button>
         </div>
-        <div class="dash-btn">
-            <p><!-- ボタンの名前を記入 -->
+        <div class="dash-btn" onClick="postToGoogle(this)">
+            <p class="text" ><!-- ボタンの名前を記入 -->
                 歯磨きボタン
             </p>
-            <button>カウントする</button>
+            <button >カウントする</button>
         </div>
-        <div class="dash-btn">
-            <p><!-- ボタンの名前を記入 -->
-                ？？？ボタン
+        <div class="dash-btn" onClick="postToGoogle(this)">
+            <p class="text"><!-- ボタンの名前を記入 -->
+                ゲームした
             </p>
             <button>カウントする</button>
         </div>
-        <div class="dash-btn">
-            <p><!-- ボタンの名前を記入 -->
-                ？？？ボタン
+        <div class="dash-btn" onClick="postToGoogle(this)">
+            <p class="text"><!-- ボタンの名前を記入 -->
+                作業開始
             </p>
             <button>カウントする</button>
         </div>
-        <div class="dash-btn">
-            <p><!-- ボタンの名前を記入 -->
-                ？？？ボタン
+        <div class="dash-btn" onClick="postToGoogle(this)">
+            <p class="text"><!-- ボタンの名前を記入 -->
+                作業完了
             </p>
             <button>カウントする</button>
         </div>
-        <div class="dash-btn">
-            <p><!-- ボタンの名前を記入 -->
+        <div class="dash-btn" onClick="postToGoogle(this)">
+            <p class="text"><!-- ボタンの名前を記入 -->
                 ？？？ボタン
             </p>
             <button>カウントする</button>
