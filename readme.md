@@ -12,15 +12,23 @@
 フォームを完成させたら、フォームの送信ページでフォームの値を入手する必要があります。
 デベロッパーツールでフォームのactionの値と、inputのnameの値を取り出してください。
 
-<img width="1084" alt="2019-01-13 15 29 23" src="https://user-images.githubusercontent.com/28776859/51082334-60c33200-1748-11e9-8483-d87ed10116b9.png">
 form actionの値
+<img width="1084" alt="2019-01-13 15 29 23" src="https://user-images.githubusercontent.com/28776859/51082334-60c33200-1748-11e9-8483-d87ed10116b9.png">
 
-<img width="1070" alt="2019-01-13 15 34 45" src="https://user-images.githubusercontent.com/28776859/51082365-e941d280-1748-11e9-914e-5c6fd9f98887.png">
 input nameの値
-
-## 
-
+<img width="1070" alt="2019-01-13 15 34 45" src="https://user-images.githubusercontent.com/28776859/51082365-e941d280-1748-11e9-914e-5c6fd9f98887.png">
 
 
+## 以下の箇所を取得したデータに書き換えてください。
+~~
+//googleフォーム actionの値を入力してください
+var formAction = "https://docs.google.com/forms/d/e/[key]/formResponse";
+~~
+こちらにactionの値を入力
+
+~~
+//googleフォーム nameの値を入力してください
+data: { "entry.xxxxxx" : field1 },
+~~
 
 
