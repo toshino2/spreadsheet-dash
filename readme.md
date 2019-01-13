@@ -20,16 +20,16 @@ input nameの値
 
 
 ## 以下の箇所を取得したデータに書き換えてください。
-```html:sample
+```html
 //googleフォーム actionの値を入力してください
 var formAction = "https://docs.google.com/forms/d/e/[key]/formResponse";
-```
+``` 
 上記「formAction」にactionの値を入力
 
-```html:sample
+```html
 //googleフォーム nameの値を入力してください
 data: { "entry.xxxxxx" : field1 },
-```
+``` 
 上記「entry.xxxxxx」をnameの値に書き換え
 
 
